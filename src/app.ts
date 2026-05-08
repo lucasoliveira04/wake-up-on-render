@@ -4,6 +4,7 @@ import * as http from "http";
 import type { IncomingMessage, ClientRequest } from "http";
 
 const siteUrl = process.env.SITE_URL;
+const timeoutMs = Number(process.env.TIMEOUT_MS) || 60_000;
 
 if (!siteUrl) {
   throw new Error("SITE_URL nao foi definida. Configure no arquivo .env.");
@@ -25,7 +26,7 @@ function ping(url: string): Promise<PingResult> {
   return new Promise((resolve) => {
     const req: ClientRequest = client.get(
       url,
-      { timeout: 30000 },
+      { timeout: timeoutMs },
       (res: IncomingMessage) => {
         const durationMs = Date.now() - start;
         const timestamp = new Date().toISOString();
