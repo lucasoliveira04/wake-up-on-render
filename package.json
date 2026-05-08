@@ -1,0 +1,25 @@
+{
+  "name": "wakeUpOnProject",
+  "version": "1.0.0",
+  "description": "Keep-alive script para manter site na Render.com ativo",
+  "main": "dist/app.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "dev": "ts-node src/app.ts"
+  },
+  "keywords": [
+    "render",
+    "keep-alive",
+    "uptime"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2"
+  }
+}
