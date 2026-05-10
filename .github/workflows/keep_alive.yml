@@ -1,9 +1,9 @@
 name: wakeUpOnProject
 
-on:
-  schedule:
-    - cron: "*/14 * * * *" # Pinga a cada 14 minutos
-  workflow_dispatch:
+# on:
+#   schedule:
+#     - cron: "*/14 * * * *" # Pinga a cada 14 minutos
+#   workflow_dispatch:
 
 jobs:
   keep-alive:
